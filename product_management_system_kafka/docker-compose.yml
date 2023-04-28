@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mysql-kafka:
+    image: mysql:8.0.3
+    container_name: mysql-kafka
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: product-management-kafka
+    volumes:
+      - ./mysql-product-management-kafka:/var/lib/mysql
+    ports:
+      - "3307:3306"
